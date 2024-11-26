@@ -10,6 +10,7 @@ import cors from "cors";
 
 import userRouter from './routes/userRouter.js';
 import postsRouter from "./routes/postsRouter.js";
+import adminRouter from "./routes/adminRouter.js"
 
 const port = process.env.PORT
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 
 
 app.use("/users", userRouter);
+app.use("/admin", adminRouter);
 app.use("/posts", postsRouter);
 
 app.get('/', (req, res) => {
