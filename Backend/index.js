@@ -11,6 +11,8 @@ import cors from "cors";
 import userRouter from './routes/userRouter.js';
 import postsRouter from "./routes/postsRouter.js";
 import adminRouter from "./routes/adminRouter.js"
+import commentRouter from './routes/commentRouter.js';
+import messageRouter from './routes/messageRouter.js';
 
 const port = process.env.PORT
 
@@ -23,6 +25,9 @@ app.use(cookieParser());
 app.use("/users", userRouter);
 app.use("/admin", adminRouter);
 app.use("/posts", postsRouter);
+app.use("/comment", commentRouter);
+app.use("/message", messageRouter);
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!!!!!!')
